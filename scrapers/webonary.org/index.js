@@ -2,8 +2,8 @@ require('total5');
 const cheerio = require('cheerio');
 const MOS_FR = 'mos-fr';
 const MOS_EN = 'mos-en';
-const OUTPUT_PATH = '../../output/webonary2.json';
-const TIMEOUT = 15000;
+const OUTPUT_PATH = 'output/webonary2.json';
+const TIMEOUT = 65000;
 
 var letters = ['-', 'a', 'ã', 'b', 'd', 'e', 'ẽ', 'f', 'g', 'h', 'k', 'l', 'm', 'n', 'o', 'õ', 'p', 'r', 's', 't', 'ũ', 'v', 'w', 'y', 'z'];
 var baseurl = 'https://www.webonary.org/moore/browse/browse-vernacular-english/?key=mos&letter={0}&lang=en';
