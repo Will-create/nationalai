@@ -5,11 +5,8 @@ const MOS_FR = 'mos-fr';
 const MOS_EN = 'mos-en';
 const OUTPUT_PATH = '../../output/webonary2.json';
 const TIMEOUT = 15000;
-// Total.js v5
 
 var letters = ['-', 'a', 'ã', 'b', 'd', 'e', 'ẽ', 'f', 'g', 'h', 'k', 'l', 'm', 'n', 'o', 'õ', 'p', 'r', 's', 't', 'ũ', 'v', 'w', 'y', 'z'];
-// var letters = ['-', 'a', 'ã'];
-// var letters = ['a'];
 var urls = [];
 var baseurl = 'https://www.webonary.org/moore/browse/browse-vernacular-english/?key=mos&letter={0}&lang=en';
 var url;
