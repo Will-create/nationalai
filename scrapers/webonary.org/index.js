@@ -1,6 +1,5 @@
 require('total5');
 const cheerio = require('cheerio');
-const { RESTBuilder } = require('total5/builders');
 const MOS_FR = 'mos-fr';
 const MOS_EN = 'mos-en';
 const OUTPUT_PATH = '../../output/webonary2.json';
