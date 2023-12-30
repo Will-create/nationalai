@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webonary": "node ./scrapers/webonary.org/index.js"
+    "webonary": "node ./scrapers/webonary.org/index.js",
+    "parquet": "node ./scrapers/parquets/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",
+    "parquetjs": "^0.11.2",
     "total5": "^0.0.1-18"
   }
 }
