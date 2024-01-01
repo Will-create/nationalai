@@ -2,6 +2,7 @@ import pandas as pd
 
 json_path1 = 'output/webonary.json'  # Remplace avec ton chemin du fichier JSON
 json_path2 = 'output/lexique.json'  # Remplace avec ton chemin du fichier JSON
+json_path3 = 'output/translation.json'  # Remplace avec ton chemin du fichier JSON
 parquet_path = 'output/dataset.parquet'  # Remplace avec ton chemin de sortie souhaité
 
 def json_to_parquet():
@@ -9,9 +10,10 @@ def json_to_parquet():
         # Charger les données JSON
         df = pd.read_json(json_path1, lines=False)
         df2 = pd.read_json(json_path2, lines=False)
+        df3 = pd.read_json(json_path3, lines=False)
 
         # combine the 
-        df_combined = pd.concat([df, df2])
+        df_combined = pd.concat([df, df2, df3])
 
         # View it
         print(df_combined)

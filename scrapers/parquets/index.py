@@ -1,5 +1,5 @@
 import pandas as pd
-
+import json
 parquet_path = '/Users/mac/Downloads/train-00000-of-00001-0252c1088531b372.parquet'
 
 def parquet_to_json(input_path, output_path):
@@ -7,15 +7,20 @@ def parquet_to_json(input_path, output_path):
         # Lire le fichier parquet
         df = pd.read_parquet(input_path)
         
+        arr = []
         # Boucler sur les lignes (on imprime juste pour l'instant)
-        for index, row in df.iterrows():
-            print(f"Traitement de la ligne: {index}")  # Affiche l'index de la ligne
-            obj = {}
-            
-            print(f"Traitement de la ligne: {row.language}")# Affiche l'index de la ligne
-        
-        # Sauvegarde le dataframe en fichier JSON
-        df.to_json(output_path, orient='records', lines=True)
+        df = df[['transcription', 'translation']]  # Exemple de colonnes
+        df['audio'] = '-'
+        df['isaudio'] = False
+        df['type'] = 'mos-fr'
+
+        df = df.rename(columns={'transcription': 'name', 'translation': 'value'})
+        df = df[(df['transcription'] != '') & (df['translation'] != '')]
+        df = df.dropna(subset=['transcription', 'translation'])
+
+
+        # Convertir en JSON
+        df.to_json('output/translation.json', orient='records', lines=False, force_ascii=False)
         
         print(f"Sauvegardé en JSON à {output_path} 🎉")
     except Exception as e:
