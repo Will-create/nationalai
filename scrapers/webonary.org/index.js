@@ -105,15 +105,12 @@ letters.wait(async function(letter, next) {
                 next();
     
         });        
-        
   });
-
 }, function() {
     setTimeout(function() {
         console.log('Total = ', words.length);
         F.Fs.writeFile(OUTPUT_PATH, JSON.stringify(words, null, 2),function() {
            console.log('done');
         });
-
     }, TIMEOUT);
 });

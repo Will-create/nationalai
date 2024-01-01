@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webonary": "node ./scrapers/webonary.org/index.js",
-    "parquet": "node ./scrapers/parquets/index.js"
+    "webonary:index": "node ./scrapers/webonary.org/index.js",
+    "parquet:index": "python3 ./scrapers/parquets/index.py",
+    "parquet:json2parquet": "python3 ./scrapers/parquets/json2parquet.py"
   },
   "keywords": [],
   "author": "",
