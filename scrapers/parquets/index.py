@@ -11,12 +11,11 @@ def parquet_to_json(input_path, output_path):
         # Boucler sur les lignes (on imprime juste pour l'instant)
         df = df[['transcription', 'translation']]  # Exemple de colonnes
         df['audio'] = '-'
-        df['isaudio'] = False
+        df['hasaudio'] = False
         df['type'] = 'mos-fr'
 
-        df = df.rename(columns={'transcription': 'name', 'translation': 'value'})
         df = df[(df['transcription'] != '') & (df['translation'] != '')]
-        df = df.dropna(subset=['transcription', 'translation'])
+        df = df.rename(columns={'transcription': 'name', 'translation': 'value'})
 
 
         # Convertir en JSON
