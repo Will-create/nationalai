@@ -1,7 +1,8 @@
 import pandas as pd
-import json
-parquet_path = '/Users/mac/Downloads/train-00000-of-00001-0252c1088531b372.parquet'
 
+
+parquet_path = '/Users/mac/Downloads/valid-00000-of-00001-ee7037af32feb4e0.parquet'
+name = 'translation6.json'
 def parquet_to_json(input_path, output_path):
     try:
         # Lire le fichier parquet
@@ -19,7 +20,7 @@ def parquet_to_json(input_path, output_path):
 
 
         # Convertir en JSON
-        df.to_json('output/translation.json', orient='records', lines=False, force_ascii=False)
+        df.to_json('output/' + name, orient='records', lines=False, force_ascii=False)
         
         print(f"Sauvegardé en JSON à {output_path} 🎉")
     except Exception as e:
