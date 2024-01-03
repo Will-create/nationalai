@@ -8,7 +8,8 @@
     "webonary:index": "node ./scrapers/webonary.org/index.js",
     "parquet:index": "python3 ./scrapers/parquets/index.py",
     "parquet:fromjson": "python3 ./scrapers/parquets/fromjson.py",
-    "parquet:splitter": "python3 ./scrapers/parquets/splitter.py"
+    "parquet:splitter": "python3 ./scrapers/parquets/splitter.py",
+    "parquet:toargos": "python3 ./scrapers/parquets/toargos.py"
   },
   "keywords": [],
   "author": "",
