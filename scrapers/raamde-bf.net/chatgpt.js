@@ -42,5 +42,5 @@ F.Fs.readFile(path,'utf-8', function(err, data) {
         });
     }, function() {
 
-    })
+    });
 });
