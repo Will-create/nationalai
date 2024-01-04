@@ -9,6 +9,7 @@
     "webonary:test": "node ./scrapers/webonary.org/test.js",
     "raamde-bf:index": "node ./scrapers/raamde-bf.net/index.js",
     "raamde-bf:chatgpt": "node ./scrapers/raamde-bf.net/chatgpt.js",
+    "raamde-bf:tonosql": "node ./scrapers/raamde-bf.net/tonosql.js",
     "parquet:index": "python3 ./scrapers/parquets/index.py",
     "parquet:fromjson": "python3 ./scrapers/parquets/fromjson.py",
     "parquet:splitter": "python3 ./scrapers/parquets/splitter.py",
