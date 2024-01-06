@@ -1,5 +1,4 @@
 require('total5');
-
 var path = 'output/raamde-bf_draft.json';
 var server = '';
 var token = '';
@@ -13,7 +12,6 @@ F.Fs.readFile(path, 'utf-8', function(err, response) {
     var index = 0;
     items.wait(function(item, next) {
         index++;
-
         item.name = 'Text ' + index;
         item.dtcreated = NOW;
         item.complete = false;
