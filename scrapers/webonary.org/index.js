@@ -11,12 +11,10 @@ var url;
 var words = [];
 letters.wait(async function(letter, next) {
     url = baseurl.format(encodeURIComponent(letter));
-    
   RESTBuilder.GET(url).keepalive().timeout(60000).callback(function(err, res, output) {
 
         var html = output.response;
         var $ = cheerio.load(html);
-
         var number = $('#wp_page_numbers > ul > li.page_info').text().split(' ').last().parseInt();
         var urls = [];
         for (var i = 0;  i < number; i++) 
