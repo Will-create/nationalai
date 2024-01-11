@@ -15,7 +15,7 @@
     "parquet:fromjson": "python3 ./scrapers/parquets/fromjson.py",
     "parquet:splitter": "python3 ./scrapers/parquets/splitter.py",
     "parquet:toargos": "python3 ./scrapers/parquets/toargos.py",
-    "transformer:index": "python3 ./scrapers/transformers/index.py"
+    "transformer:index": "python3 ./transformers/index.py"
   },
   "keywords": [],
   "author": "",
