@@ -23,6 +23,7 @@ class PositionalEncoding(nn.Module):
 
         # create a matrix of shape (seq_len, d_model)
         pe = torch.zeros(seq_len, d_model)
+        print(pe)
 
 pos = PositionalEncoding(512, 32, 1.0)
 
