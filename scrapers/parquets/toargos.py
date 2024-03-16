@@ -21,13 +21,13 @@ def split_save_text(input_path):
         target_text = '\n'.join(values)
         
         # Sauvegarder dans des fichiers texte
-        with open('output/argos/' + model + '/v1/source.txt', 'w', encoding='utf-8') as f_source:
+        with open('output/argos/' + model + '/v1/source', 'w', encoding='utf-8') as f_source:
             f_source.write(source_text)
             
-        with open('output/argos/' + model + '/v1/target.txt', 'w', encoding='utf-8') as f_target:
+        with open('output/argos/' + model + '/v1/target', 'w', encoding='utf-8') as f_target:
             f_target.write(target_text)
         
-        print("C'est bon! Tu as 'source.txt' et 'target.txt'. 📘➡📗")
+        print("C'est bon! Tu as 'source.txt' et 'target'. 📘➡📗")
     except Exception as e:
         print(f"Oups! Une erreur est survenue: {e} 😅")
 

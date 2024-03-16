@@ -36,7 +36,7 @@ var generate_urls = function(n, str) {
         resolve(arr);
 
     
-    })
+    });
 }
 
 async function main() {
