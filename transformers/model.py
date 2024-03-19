@@ -156,7 +156,7 @@ class DecoderBlock(nn.Module):
         self.self_attention_block = self_attention_block
         self.cross_attention_block = cross_attention_block
         self.feed_forward_block = feed_forward_block
-        self.residual_connections = nn.Module([ResidualConnetion(dropout) for _ in range(3)])
+        self.residual_connections = nn.ModuleList([ResidualConnetion(dropout) for _ in range(3)])
 
     def forward(self, x, encoder_output, src_mask, tgt_mask):
         x = self.residual_connections[0](x, lambda x: self.self_attention_block(x, x, x, tgt_mask))
@@ -249,7 +249,6 @@ def build(src_vocab_size: int, tgt_vocab_size: int, src_seq_len: int, tgt_seq_le
 
     # Create the transformer instance
     transformer = Transformer(encoder, decoder, src_embed, tgt_embed, src_pos, tgt_pos, projection_layer)
-
 
     # Initialize the parametters
     for p in transformer.parameters():

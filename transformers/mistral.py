@@ -1,5 +1,5 @@
 from transformers import AutoModelForCausalLM, AutoTokenizer
-
+from model import bu
 model_id = "mistralai/Mixtral-8x7B-v0.1"
 tokenizer = AutoTokenizer.from_pretrained(model_id)
 
