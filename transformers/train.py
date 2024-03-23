@@ -86,25 +86,29 @@ def run_validation(model, validation_ds, tokenizer_src, tokenizer_tgt, max_len, 
 
 
          
-def get_all_sentences(ds, lang):
+def get_all_sentences(ds, key):
     for item in ds:
-        yield item['translation'][lang]
+        yield item[key]
     
 def get_or_build_tokenizer(config, ds, lang): 
     # config['tokenizer_file'] = '../tokenizers/tokenizer_{0}.json'
+    key = 'name'
+    if config['lang_tgt'] == lang:
+        key = 'value'
+
     tokenizer_path = Path(config['tokenizer_file'].format(lang))
     if not Path.exists(tokenizer_path):
         tokenizer = Tokenizer(WordLevel(unk_token='[UNK]'))
         tokenizer.pre_tokenizer = Whitespace()
         trainer = WordLevelTrainer(special_tokens=['[UNK]', '[PAD]', '[SOS]', '[EOS]'], min_frequency=2)
-        tokenizer.train_from_iterator(get_all_sentences(ds, lang), trainer = trainer)
+        tokenizer.train_from_iterator(get_all_sentences(ds, key), trainer = trainer)
         tokenizer.save(str(tokenizer_path))
     else:
         tokenizer = Tokenizer.from_file(str(tokenizer_path))
     return tokenizer
 
 def get_ds(config):
-    ds_raw = load_dataset('opus_books', f"{config['lang_src']}-{config['lang_tgt']}", split='train')
+    ds_raw = load_dataset(f"louisbertson/{config['lang_src']}_{config['lang_tgt']}_dataset", split='train')
 
     # Builder the tokenizers
     tokenizer_src = get_or_build_tokenizer(config, ds_raw, config['lang_src'])
@@ -122,8 +126,8 @@ def get_ds(config):
     max_len_tgt = 0
 
     for item in ds_raw:
-        src_ids = tokenizer_src.encode(item['translation'][config['lang_src']])
-        tgt_ids = tokenizer_src.encode(item['translation'][config['lang_tgt']])
+        src_ids = tokenizer_src.encode(item['name'])
+        tgt_ids = tokenizer_src.encode(item['value'])
         max_len_src = max(max_len_src, len(src_ids))
         max_len_tgt = max(max_len_tgt, len(tgt_ids))
 
