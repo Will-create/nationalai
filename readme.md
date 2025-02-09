@@ -2,6 +2,8 @@
 
 Welcome to **NationalAI**, a repository dedicated to the creation and training of machine translation models between **Moore** (a language spoken in Burkina Faso) and **French**. This repository houses a collection of scripts, resource files, and datasets that were used to build and train translation models, specifically leveraging the **Transformer** architecture. It also includes **Colab notebooks** to facilitate easy experimentation with both training and inference.
 
+**Live Demo :** [Coming soon]()
+
 ---
 
 ## Table of Contents
@@ -23,6 +25,7 @@ This repository serves as a resource hub for developing **Moore-French** and **F
 - A collection of **datasets** in multiple formats (Parquet, JSON, TXT).
 - An implementation of the **Transformer** architecture for machine translation.
 - **Colab notebooks** for simplified training and inference.
+- A **live demo** for real-time translation between Moore and French.
 
 > **Note:** This repository is a collection of scripts and resources. It does not represent a fully-fledged application with features but is designed to be modular and adaptable for different translation tasks.
 
@@ -43,6 +46,7 @@ Here’s an overview of the key directories and files:
   - **`model.py`**: The core Transformer model implementation.
   - **`train.py`**: Training script for the Transformer model.
   - **`translate.py`**: Script for performing translation inference.
+- **`demo/`**: The source code for the live demo application, allowing users to translate between Moore and French in real-time.
 
 ---
 
@@ -121,11 +125,19 @@ Or run the script locally:
 python transformers/translate.py --input "Your Moore/French sentence here"
 ```
 
+### Using the Live Demo
+
+Experience real-time translation with our live demo:
+
+1. Visit the [NationalAI Translation Tool](https://nationalai-translation-tool.vercel.app/).
+2. Input your text in **Moore** or **French**.
+3. Get instant translations using the trained Transformer model.
+
 ---
 
 ## Contributing
 
-We welcome contributions to this project! Whether it’s improving scripts, adding new datasets, or refining the translation models, your help is appreciated.
+We welcome contributions to this project! Whether it’s improving scripts, adding new datasets, refining the translation models, or enhancing the live demo, your help is appreciated.
 
 ### How to Contribute
 
@@ -167,4 +179,3 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 
 - Inspired by the need to create accessible machine translation tools for **Moore** and **French**.
 - Thanks to the contributors and linguistic communities supporting open-source translation projects.
-
