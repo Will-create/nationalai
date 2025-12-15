@@ -7,10 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "webonary:index": "node ./scrapers/webonary.org/index.js",
     "webonary:test": "node ./scrapers/webonary.org/test.js",
-    "raamde-bf:index": "node ./scrapers/raamde-bf.net/index.js",
-    "raamde-bf:chatgpt": "node ./scrapers/raamde-bf.net/chatgpt.js",
-    "raamde-bf:tonosql": "node ./scrapers/raamde-bf.net/tonosql.js",
-    "raamde-bf:toserver": "node ./scrapers/raamde-bf.net/toserver.js",
+    "rbf:index": "node ./scrapers/raamde-bf.net/index.js",
+    "rbf:chatgpt": "node ./scrapers/raamde-bf.net/chatgpt.js",
+    "tts:utils": "node ./tts/index.js",
+    "tts:acronyms": "node ./tts/utils/acronym.js",
+    "rbf:tonosql": "node ./scrapers/raamde-bf.net/tonosql.js",
+    "rbf:toserver": "node ./scrapers/raamde-bf.net/toserver.js",
     "parquet:index": "python3 ./scrapers/parquets/index.py",
     "parquet:fromjson": "python3 ./scrapers/parquets/fromjson.py",
     "parquet:splitter": "python3 ./scrapers/parquets/splitter.py",
@@ -24,6 +26,6 @@
     "@dsnp/parquetjs": "^1.3.5",
     "cheerio": "^1.0.0-rc.12",
     "total4": "^0.0.94",
-    "total5": "^0.0.1-18"
+    "total5": "^0.0.15"
   }
 }
