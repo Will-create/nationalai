@@ -108,7 +108,7 @@ function convert(input_text) {
         // Step 1: Replace phone numbers and numbers with Moore
         input_text = processTextWithMoore(input_text);
         // Step 2: Apply character replacements for TTS
-        input_text = replaceAcronymsWithMoore(input_text);
+        // input_text = replaceAcronymsWithMoore(input_text);
         for (var key in replace_map) {
             var value = replace_map[key];    
             var regex = new RegExp(key, 'g');

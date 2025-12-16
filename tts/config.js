@@ -3,7 +3,7 @@ const REPLACEMENT_MAP = {
     'ũ': 'u',
     'oo': 'oo',
     'ɩ': 'i',
-    'ɛɛ': 'e',
+    'ɛɛ': 'ee',
     'ɛ': 'e',
     'ãa': 'aa',
     'ã': 'a',
